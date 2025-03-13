@@ -1,76 +1,43 @@
 "use strict";
 (() => {
-    class Mutant {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
-        }
-    }
-    class Xmen extends Mutant {
-        salvarMundo() {
-            return 'Mundo salvado';
-        }
-    }
-    class Villian extends Mutant {
-        conquistarMundo() {
-            return 'Mundo conquistado';
-        }
-    }
-    const wolverine = new Xmen('Wolverine', 'Logan');
-    const magneto = new Villian('Magneto', 'Erik');
-    const printName = (character) => {
+    let flash = {
+        name: 'Barry Allen',
+        age: 26,
+        powers: ['Super velocidad', 'Viajar en el tiempo']
     };
-    printName(wolverine);
+    let superman = {
+        name: 'Clark Kent',
+        age: 26,
+        powers: ['Super velocidad'],
+        getName() {
+            return this.name;
+        },
+    };
 })();
 (() => {
-    class Avenger {
-        constructor(name, team, realName) {
-            this.name = name;
-            this.team = team;
-            this.realName = realName;
-        }
-        bio() {
-            return `${this.name} (${this.team})`;
-        }
-    }
-    const antman = new Avenger('Antman', 'cap', 'Scott Lang');
-})();
-(() => {
-    class Avenger {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
-        }
-        getFullName() {
-            return `${this.name} - ${this.realName}`;
-        }
-    }
-    class Xmen extends Avenger {
-        constructor(name, realName, isMutant) {
-            super(name, realName);
-            this.isMutant = isMutant;
-        }
-        get fullName() {
-            return `${this.name} - ${this.realName}`;
-        }
-        set fullName(name) {
-            this.name = name;
-        }
-    }
-    const wolverine = new Xmen('Wolverine', 'Logan', true);
-})();
-(() => {
-    class Apocalipsis {
-        constructor(name) {
-            this.name = name;
-        }
-        static callApocalipsis() {
-            if (!Apocalipsis.instance) {
-                Apocalipsis.instance = new Apocalipsis('Apocalipsis');
-            }
-            return this.instance;
-        }
-    }
-    const apocalipsis = Apocalipsis.callApocalipsis();
+    const client = {
+        name: 'Guillermo',
+        age: 26,
+        address: {
+            id: 124,
+            zip: 'HYZ 1WS',
+            city: 'Leon'
+        },
+        getFullAdress(id) {
+            return this.address.city;
+        },
+    };
+    const client2 = {
+        name: 'Joel',
+        age: 24,
+        address: {
+            id: 124,
+            zip: 'HYZ 1WS',
+            city: 'Leon'
+        },
+        getFullAdress(id) {
+            return this.address.city;
+        },
+    };
 })();
 //# sourceMappingURL=main.js.map
